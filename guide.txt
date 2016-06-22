@@ -1,0 +1,56 @@
+First creating the toolbar
+
+So create a new xml file and use widget toolbar 
+
+add the xml file in the main file by using include
+
+Make sure all the images in drawable folder 
+
+theme in android manifest is set to no Action bar
+
+Make a menu folder in res and add a file drawable.xml
+
+Indrawable.xml add the items of the menu.
+
+in athe activity_main xml file 
+
+below the include use drawer layout widget
+
+in drawer layout 
+
+define a frame layout and outside the linear layout navigation view.
+
+<LinearLayout>
+<include>
+<drawerLayout>
+   <linearLayout>
+	<FrameLayout>
+    </linearLayout>
+   
+    <NavigationView>
+</drawerLayout>		
+</linearLayout>
+
+
+MainActivity
+Initialize the toolbar,navigationview,drawerLayout.
+
+Toolbar 
+   setSupportActionToolBar
+
+NavigationView 
+
+   nv.setNavigationItemSelected
+
+DrawerLayout
+    ActionbarToggle
+  			
+Last step is to create the fragment .
+and inside the switch condition place or replace the frame with the ragment.
+
+ContentFragment  frag = new ContentFragment();
+FragementTransaction fragtrans = getSupportFragmentManager().beginTransaction();
+  
+fragtrans.replace(R.id.frame,fragment);
+fragtran.commit();
+	
